@@ -1,6 +1,6 @@
-let firstName = prompt ('enter your first name');
-let lastName = prompt ('enter your last name');
-let age = prompt ('enter your age');
+const firstName = prompt ('enter your first name');
+const lastName = prompt ('enter your last name');
+const age = prompt ('enter your age');
 
 alert (`Hello ${firstName} ${lastName} your age ${age}`);
 
