@@ -4,7 +4,6 @@
 
 // for (let i = 20; i <= 30; i += 0.5) {
 //   b = i;
-
 //   console.log(b)
 // }
 
@@ -14,7 +13,6 @@
 // let b = 27;
 
 // for (let i = 10; i <=100; i +=10) {
-
 //   console.log(b * i);
 // }
 
