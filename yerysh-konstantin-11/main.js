@@ -43,11 +43,18 @@
 
 // ***Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна)***
 // никак не могу понять как реализовать это
-let n = 4;
+// let n = 15;
 
-for (let i = 1; i < 100; i++) {
-  if (i ^ 3 == 0 ) {
-    n = i;
-    console.log (n);
-  } else;
-} 
+// for (let i = 1; i < n; i++) {
+//   if (i % 3 == 0 ) {
+//     console.log (i);
+//   }
+// } 
+
+// let yourNumber = prompt('entar number');
+
+// if (yourNumber % 3 == 0) {
+//     console.log(`${yourNumber} can divide on 3`)
+// } else {
+//     console.log(`${yourNumber} can't divide on 3`)
+// }
