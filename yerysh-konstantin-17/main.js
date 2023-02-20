@@ -1,60 +1,62 @@
-let users = [
-    {
-    "index": 0,
-    "isActive": true,
-    "balance": "$2,226.60",
-    "name": "Eugenia Sawyer",
-    "gender": "female",
-    "phone": "+1 (840) 583-3207",
-    "address": "949 John Street, Rose, Puerto Rico, 1857"
-    },
-    {
-    "index": 1,
-    "isActive": true,
-    "balance": "$2,613.77",
-    "name": "Pauline Gallegos",
-    "gender": "female",
-    "phone": "+1 (985) 593-3328",
-    "address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
-    },
-    {
-    "index": 2,
-    "isActive": false,
-    "balance": "$3,976.41",
-    "name": "Middleton Chaney",
-    "gender": "male",
-    "phone": "+1 (995) 591-2478",
-    "address": "807 Fleet Walk, Brutus, Arkansas, 9783"
-    },
-    {
-    "index": 3,
-    "isActive": true,
-    "balance": "$1,934.58",
-    "name": "Burns Poole",
-    "gender": "male",
-    "phone": "+1 (885) 559-3422",
-    "address": "730 Seba Avenue, Osage, Alabama, 6290"
-    },
-    {
-    "index": 4,
-    "isActive": true,
-    "balance": "$3,261.65",
-    "name": "Mcfadden Horne",
-    "gender": "male",
-    "phone": "+1 (942) 565-3988",
-    "address": "120 Scholes Street, Kirk, Michigan, 1018"
-    },
-    {
-    "index": 5,
-    "isActive": false,
-    "balance": "$1,790.56",
-    "name": "Suzette Lewis",
-    "gender": "female",
-    "phone": "+1 (837) 586-3283",
-    "address": "314 Dunne Place, Bawcomville, Guam, 9053"
-    }
-    ]
+//     Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
+let arr = ['a', 2, 'y', '34', 12, 'afaf', 9];
 
-    // Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. 
-    // І знайти суму всіх балансів користувачів
+function calculateArr(arr) { // функция с  названием calculate. принимает масив с названием arr
+    let sum = 0; // переменная sum, которая изначально равна 0. считать сумму числе
+    let count = 0; // переменная count, которая изначально равна 0. Будет считать количество интераций
+    
+    for (let i = 0; i < arr.length; i++) { // цикл, который перебирает масив arr по его длине
+      if (typeof arr[i] === 'number') { //смотрит на условие, если элемент по типу равен number
+        sum += arr[i]; // прибавляет число в переменую sum
+        count++; // считает количество таких "успешных" интераций
+        return sum / count;
+      }
+    }
+    
+    // if (count > 0) { // проверка на полодительное число
+    //   return sum / count; // если число больше 0, возвращает значение sum(сумма всех чисел) деленное на count(количество интераций)
+    // } else {
+    //   return 0;
+    // }
+  }
+
+  let arr2 = calculateArr(arr);
+  console.log(arr2); 
+  
+
+//     Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
+
+function doMath(x, znak, y) {
+    let result;
+    switch (znak) {
+      case '+':
+        result = x + y;
+        break;
+      case '-':
+        result = x - y;
+        break;
+      case '*':
+        result = x * y;
+        break;
+      case '/':
+        result = x / y;
+        break;
+      case '%':
+        result = x % y;
+        break;
+      case '^':
+        result = Math.pow(x, y);
+        break;
+      default:
+        result = 'wrong comand';
+    }
+    return result;
+  }
+
+  console.log(doMath(3, '*', 5));
+
+//     Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
+
+
+//     Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
 

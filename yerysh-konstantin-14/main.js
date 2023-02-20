@@ -57,10 +57,16 @@ let users = [
 
 // Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. 
 // І знайти суму всіх балансів користувачів
-let sumBalance = 0;
 
-users.forEach((user) => {
-    let money = user.balance;
-    console.log(money > 2000);
-})
+const userBalance = users
+  .filter(user => parseFloat(user.balance.replace('$', '').replace(',', '')) > 2000)
+  .map(user => user.balance);
 
+console.log(userBalance);
+
+const totalBalance = users.reduce((acc, user) => {
+    const balance = parseFloat(user.balance.replace('$', '').replace(',', ''));
+    return acc + balance;
+  }, 0);
+  
+  console.log(totalBalance);
