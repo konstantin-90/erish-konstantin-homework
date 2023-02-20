@@ -11,13 +11,19 @@ class Student {
     this.name = name;
     this.lastName = lastName;
     this.birthYear = this.birthYear;
-    grade = [];
+    this.grade = [];
     this.attendance = new Array(25);
   };
 
   getAge() {
-    let age = 
-  }
+    return 2023 - this.birthYear; 
+  };
+
+  MiddleGrade() {
+    let sum = this.grade.reduce((acc, curr) => acc + curr, 0);
+    return sum / this.grades.length;
+  };
+
   present() {
     let markPlus;
     if (markPlus > 0) {
