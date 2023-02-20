@@ -77,9 +77,9 @@ const house1 = new House(2);
 house1.addApartment(apartment1);
 
 const house2 = new Apartment();
-house1.addApartment(apartment2); 
+house1.addApartment(apartment1); 
 
 const house3 = new Apartment();
-house1.addApartment(apartment3); 
+house1.addApartment(apartment1); 
   
 

@@ -14,6 +14,10 @@ class Student {
     grade = [];
     this.attendance = new Array(25);
   };
+
+  getAge() {
+    let age = 
+  }
   present() {
     let markPlus;
     if (markPlus > 0) {
@@ -28,3 +32,4 @@ class Student {
   };
 
 }
+
