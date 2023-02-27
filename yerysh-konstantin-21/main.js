@@ -46,7 +46,7 @@ class Apartment {
   this.people = [];
   }
   addPeople(human) {
-  this.residents.push(human);
+  this.people.push(human);
   }
 }
 
@@ -70,8 +70,8 @@ const person1 = new Human("Konstantin", "male");
 const person2 = new Human("Maria", "female");
 
 const apartment1 = new Apartment();
-apartment1.addResident(person1);
-apartment1.addResident(person2);
+apartment1.addPeople(person1);
+apartment1.addPeople(person2);
 
 const house1 = new House(2);
 house1.addApartment(apartment1);
