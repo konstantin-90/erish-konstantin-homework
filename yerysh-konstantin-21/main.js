@@ -43,7 +43,7 @@ class Human {
 // 2. Класс Квартира
 class Apartment {
   constructor() {
-  this.people = [];
+  this.people = [];                 
   }
   addPeople(human) {
   this.people.push(human);
