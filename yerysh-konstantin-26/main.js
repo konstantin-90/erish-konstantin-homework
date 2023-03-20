@@ -1,8 +1,10 @@
-const buttonShow = document.getElementById('buttonShow')
+const inputShow = document.getElementById('inputShow')
 
-buttonShow.addEventListener('focus', () => {
+inputShow.onfocus = function() {
   recept.style.display = 'block';
-  console.log("well done")
-})
+};
 
 
+inputShow.onblur = function() {
+  recept.style.display = 'none';
+};
