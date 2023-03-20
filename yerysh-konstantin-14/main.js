@@ -60,7 +60,7 @@ let users = [
 
 const userBalance = users
   .filter(user => parseFloat(user.balance.replace('$', '').replace(',', '')) > 2000)
-  .map(user => user.balance);
+  .map(user => user.phone);
 
 console.log(userBalance);
 
