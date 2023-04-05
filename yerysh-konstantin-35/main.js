@@ -1,6 +1,4 @@
-
 function saveData() {
-    // Зчитуємо значення з полів "Ім'я" та "Прізвище"
     const firstName = document.getElementById("first__name").value;
     const lastName = document.getElementById("last__name").value;
     const birthdate = document.getElementById("birthdate").value;
@@ -9,11 +7,9 @@ function saveData() {
     const address = document.getElementById("address").value;
     const languages = document.querySelectorAll('input[type="checkbox"]:checked');
   
-    // Створюємо новий рядок у таблиці
     let table = document.getElementById("data").getElementsByTagName("tbody")[0];
     let row = table.insertRow();
   
-    // Заповнюємо новий рядок отриманими даними
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -28,6 +24,7 @@ function saveData() {
     cell5.innerHTML = city;
     cell6.innerHTML = address;
     cell7.innerHTML = languages;
-  }
-  
+
+}
+
 
