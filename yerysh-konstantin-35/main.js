@@ -6,6 +6,11 @@ function saveData() {
     const city = document.getElementById("city").value;
     const address = document.getElementById("address").value;
     const languages = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    const selectedLanguages = [];
+    languages.forEach((checkbox) => {
+      selectedLanguages.push(checkbox.value);
+    });
   
     let table = document.getElementById("data").getElementsByTagName("tbody")[0];
     let row = table.insertRow();
@@ -23,7 +28,7 @@ function saveData() {
     cell4.innerHTML = gender;
     cell5.innerHTML = city;
     cell6.innerHTML = address;
-    cell7.innerHTML = languages;
+    cell7.innerHTML = selectedLanguages;
 
 }
 
