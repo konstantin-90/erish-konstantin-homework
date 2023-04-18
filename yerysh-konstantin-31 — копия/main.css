@@ -1,0 +1,21 @@
+.tabs__nav {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    width: 5%;
+}
+
+
+.tabs__nav-btn {
+    background-color: yellowgreen;
+    padding: 1%;
+    margin: 1%;
+}
+
+.tabs__item {
+    display: none;
+}
+
+.tabs__item.active {
+    display: block;
+}

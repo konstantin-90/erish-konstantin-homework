@@ -138,6 +138,7 @@ function createTablePhon() {
 
   // добавляем таблицу на страницу
    return tableContainer.appendChild(table);
+   
 }
 
 function createTableLaptop() {
@@ -193,81 +194,3 @@ function createTableTablet() {
 
   return tableContainer.appendChild(table);
 }
-
-
-
-  // Получаем ссылки на кнопки и соответствующие им div-элементы
-  var phoneBtn = document.getElementById('phone');
-  var tabletBtn = document.getElementById('tablet');
-  var laptopBtn = document.getElementById('laptop');
-
-  // Добавляем обработчик событий клика на каждую кнопку
-  phoneBtn.addEventListener('click', function() {
-    // Скрываем остальные div-элементы и показываем нужный
-    tabletTab.classList.remove('active');
-    laptopTab.classList.remove('active');
-    phoneTab.classList.add('active');
-  });
-
-  tabletBtn.addEventListener('click', function() {
-    // Скрываем остальные div-элементы и показываем нужный
-    phoneTab.classList.remove('active');
-    laptopTab.classList.remove('active');
-    tabletTab.classList.add('active');
-  });
-
-  laptopBtn.addEventListener('click', function() {
-    // Скрываем остальные div-элементы и показываем нужный
-    phoneTab.classList.remove('active');
-    tabletTab.classList.remove('active');
-    laptopTab.classList.add('active');
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function renderDetails() {
-//   const product = productsById[selectedProduct];
-
-//   containerDetails.innerHTML = 
-//   `<div class="card">
-//       <img src="${product.thumbnail}" class="card-img-top p-3" alt="${product.title}">
-//       <div class="card-body">
-//         <h5 class="card-title">${product.title}</h5>
-//         <p class="card-text">${product.description}</p>
-//       </div>
-//       <ul class="list-group list-group-flush">
-//         <li class="list-group-item"><strong>Price:</strong> ${product.price}EUR</li>
-//         <li class="list-group-item"><strong>Discount:</strong> ${product.discountPercentage}%</li>
-//         <li class="list-group-item"><strong>Rating:</strong> ${product.rating}⭐</li>
-//         <li class="list-group-item"><strong>Brand:</strong> ${product.brand}🏢</li>
-//       </ul>
-//       <div class="card-body">
-//         <button data-purchase="${product.id}" class="btn btn-primary">Purchase</button>
-//       </div>
-//     </div>`;
-// }

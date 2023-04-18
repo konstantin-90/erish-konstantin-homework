@@ -1,36 +1,123 @@
-fetch("./products.json")
-  .then(res => res.json())
-  .then(data => {
-    const element = document.querySelector("[data-table=\'products\']");
-    const table = renderTable(data.products);
+const dataPhone = [
+  {    
+  name: "iPhone 13",    
+  description: "Флагманский смартфон Apple с OLED-дисплеем, новым процессором A15 Bionic и тройной камерой.",    
+  cost: 999,    
+  brand: "Apple"  
+  },  
+  {    
+  name: "Samsung Galaxy Z Flip 3",    
+  description: "Смартфон-раскладушка с дисплеем из стекла, процессором Snapdragon 888 и двойной камерой.",    
+  cost: 999,    
+  brand: "Samsung"  },  
+  {    
+  name: "OnePlus 10 Pro",    
+  description: "Флагманский смартфон OnePlus с 6,7-дюймовым дисплеем, процессором Snapdragon 8 Gen 1 и четверной камерой.",    
+  cost: 899,    
+  brand: "OnePlus"  
+  },  
+  {    
+  name: "Google Pixel 6",    
+  description: "Смартфон с дисплеем из супертонкого стекла, новым процессором Tensor и двойной камерой.",    
+  cost: 749,    "brand": "Google"  },  
+  {    
+  name: "Xiaomi Mi 12",    
+  description: "Флагманский смартфон Xiaomi с 6,8-дюймовым дисплеем, процессором Snapdragon 8 Gen 1 и пятикратной камерой.",    
+  cost: 999,    
+  brand: "Xiaomi"  
+}
+];
 
-    element.append(table);
+const dataLaptop = [
+  {
+    name: "MacBook Pro",
+    description: "Powerful laptop for professional use",
+    cost: 1999,
+    brand: "Apple"
+  },
+  {
+    name: "ThinkPad X1 Carbon",
+    description: "Ultra-light and durable business laptop",
+    cost: 1599,
+    brand: "Lenovo"
+  },
+  {
+    name: "Surface Laptop 4",
+    description: "Sleek and stylish laptop for everyday use",
+    cost: 1299,
+    brand: "Microsoft"
+  },
+  {
+    name: "ZenBook UX425",
+    description: "Thin and light laptop with long battery life",
+    cost: 899,
+    brand: "Asus"
+  },
+  {
+    name: "Chromebook Spin 713",
+    description: "Affordable and versatile laptop for students",
+    cost: 599,
+    brand: "Acer"
+  }
+];
 
-    function renderTable(data) {
-      const tableHead = rendeerHead();
-      const tableBody = renderBody(data);
+const dataTablet = [
+  {
+    name: "iPad Pro",
+    description: "11-inch Liquid Retina display, A14 Bionic chip, and support for Apple Pencil and Magic Keyboard.",
+    cost: 799,
+    brand: "Apple"
+  },
+  {
+    name: "Galaxy Tab S7+",
+    description: "12.4-inch Super AMOLED display, Qualcomm Snapdragon 865 Plus processor, and support for the S Pen.",
+    cost: 849,
+    brand: "Samsung"
+  },
+  {
+    name: "Surface Pro 7+",
+    description: "12.3-inch PixelSense display, 11th Gen Intel Core processors, and optional LTE Advanced.",
+    cost: 899,
+    brand: "Microsoft"
+  },
+  {
+    name: "Lenovo Tab P11 Pro",
+    description: "11.5-inch OLED display, Qualcomm Snapdragon 730G processor, and quad speakers tuned by JBL.",
+    cost: 499,
+    brand: "Lenovo"
+  },
+  {
+    name: "Fire HD 10",
+    description: "10.1-inch 1080p full HD display, octa-core processor, and up to 12 hours of battery life.",
+    cost: 149,
+    brand: "Amazon"
+  }
+];
 
-      const table = document.createElement("table");
-      table.setAttribute("class", "table")
-      table.append(tableHead);
-      table.append(tableBody);
-      return table;
-    }
+const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
+const tabsItems = document.querySelectorAll('.tabs__item');
 
-    function rendeerHead() {
-      const thead = document.createElement("thead");
+tabsBtn.forEach(onTabClick);
 
-      return thead;
-    }
-
-
-    function renderBody() {
-      const tbody = document.createElement("tbody");
-
-      return tbody;
-    }
-
-
-  });
-
+function onTabClick(item) {
+  item.addEventListener("click", function() {
+    let currentBtn = item;
+    let tabId = currentBtn.getAttribute('data-tab')
+    let currentTab = document.querySelector(tabId);
   
+    if(!currentBtn.classList.contains('active')) {
+      tabsBtn.forEach(function(item) {
+        item.classList.remove('active')
+      });
+  
+      tabsItems.forEach(function(item) {
+        item.classList.remove('active')
+      });
+  
+  
+      currentBtn.classList.add("active");
+      currentTab.classList.add("active");
+    }
+  })
+};
+
