@@ -29,8 +29,6 @@ function saveData() {
   cell5.innerHTML = city;
   cell6.innerHTML = address;
   cell7.innerHTML = selectedLanguages;
-
-  
 }
 
 

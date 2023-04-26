@@ -107,24 +107,24 @@ laptop.addEventListener("click", createTableTablet);
 
 
 function createTablePhon() {
-  // получаем ссылку на элемент, куда будем вставлять таблицу
-  const tableContainer = document.getElementById("table-container");
+  const tableContainer = document.getElementById("table-container-1");
 
-  // создаем таблицу
+  document.querySelectorAll(".table__show").forEach(container => {
+    container.style.display = "none";
+  });
+  tableContainer.style.display = "block";
+
   const table = document.createElement("table");
-  
-  // создаем заголовок таблицы
   const headerRow = document.createElement("tr");
   const headerNames = ["Name", "Description", "Cost", "Brand"];
-
+  
   headerNames.forEach((name) => {
     const headerCell = document.createElement("th");
     headerCell.textContent = name;
     headerRow.appendChild(headerCell);
   });
   table.appendChild(headerRow);
-
-  // добавляем данные в таблицу
+  
   dataPhone.forEach((phone) => {
     const row = document.createElement("tr");
     const cells = [phone.name, phone.description, phone.cost, phone.brand];
@@ -135,14 +135,17 @@ function createTablePhon() {
     });
     table.appendChild(row);
   });
-
-  // добавляем таблицу на страницу
-   return tableContainer.appendChild(table);
-   
+  return tableContainer.appendChild(table);
 }
 
 function createTableLaptop() {
-  const tableContainer = document.getElementById("table-container");
+  const tableContainer = document.getElementById("table-container-2");
+
+  document.querySelectorAll(".table__show").forEach(container => {
+    container.style.display = "none";
+  });
+
+  tableContainer.style.display = "block";
   const table = document.createElement("table");
 
   const headerRow = document.createElement("tr");
@@ -150,6 +153,7 @@ function createTableLaptop() {
 
   headerNames.forEach((name) => {
     const headerCell = document.createElement("th");
+    headerCell.textContent = name;
     headerRow.appendChild(headerCell);
   });
   table.appendChild(headerRow);
@@ -169,7 +173,14 @@ function createTableLaptop() {
 }
 
 function createTableTablet() {
-  const tableContainer = document.getElementById("table-container");
+  const tableContainer = document.getElementById("table-container-3");
+
+  document.querySelectorAll(".table__show").forEach(container => {
+    container.style.display = "none";
+  });
+
+  tableContainer.style.display = "block";
+
   const table = document.createElement("table");
 
   const headerRow = document.createElement("tr");
@@ -177,6 +188,7 @@ function createTableTablet() {
 
   headerNames.forEach((name) => {
     const headerCell = document.createElement("th");
+    headerCell.textContent = name;
     headerRow.appendChild(headerCell);
   });
   table.appendChild(headerRow);
@@ -194,3 +206,5 @@ function createTableTablet() {
 
   return tableContainer.appendChild(table);
 }
+
+

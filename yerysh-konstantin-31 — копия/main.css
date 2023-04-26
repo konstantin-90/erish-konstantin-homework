@@ -8,8 +8,11 @@
 
 .tabs__nav-btn {
     background-color: yellowgreen;
-    padding: 1%;
-    margin: 1%;
+    width: 250px;
+    height: 50px;
+    font-size: 32px;
+    border-radius: 20px;
+
 }
 
 .tabs__item {
@@ -19,3 +22,16 @@
 .tabs__item.active {
     display: block;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 5%;
+}
+
