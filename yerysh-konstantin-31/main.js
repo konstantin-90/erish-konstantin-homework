@@ -59,7 +59,7 @@ const dataLaptop = [
       cost: 599,
       brand: "Acer"
     }
-  ];
+];
 
   const dataTablet = [
     {
@@ -92,7 +92,7 @@ const dataLaptop = [
       cost: 149,
       brand: "Amazon"
     }
-  ];
+];
   
 
 const phone = document.getElementById("phone");
@@ -109,10 +109,11 @@ laptop.addEventListener("click", createTableTablet);
 function createTablePhon() {
   const tableContainer = document.getElementById("table-container-1");
 
-  document.querySelectorAll(".table__show").forEach(container => {
-    container.style.display = "none";
-  });
-  tableContainer.style.display = "block";
+  if (tableContainer.querySelector("table")) {
+    return; 
+  }
+
+  tableContainer.classList.add('active');
 
   const table = document.createElement("table");
   const headerRow = document.createElement("tr");
@@ -141,11 +142,12 @@ function createTablePhon() {
 function createTableLaptop() {
   const tableContainer = document.getElementById("table-container-2");
 
-  document.querySelectorAll(".table__show").forEach(container => {
-    container.style.display = "none";
-  });
+  if (tableContainer.querySelector("table")) {
+    return; 
+  }
 
-  tableContainer.style.display = "block";
+  tableContainer.classList.add('active');
+
   const table = document.createElement("table");
 
   const headerRow = document.createElement("tr");
@@ -175,11 +177,11 @@ function createTableLaptop() {
 function createTableTablet() {
   const tableContainer = document.getElementById("table-container-3");
 
-  document.querySelectorAll(".table__show").forEach(container => {
-    container.style.display = "none";
-  });
+  if (tableContainer.querySelector("table")) {
+    return; 
+  }
 
-  tableContainer.style.display = "block";
+  tableContainer.classList.add('active');
 
   const table = document.createElement("table");
 

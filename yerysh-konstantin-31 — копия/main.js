@@ -94,30 +94,55 @@ const dataTablet = [
   }
 ];
 
-const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
-const tabsItems = document.querySelectorAll('.tabs__item');
+// const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
+// const tabsItems = document.querySelectorAll('.tabs__item');
 
-tabsBtn.forEach(onTabClick);
+// tabsBtn.forEach(onTabClick);
 
-function onTabClick(item) {
-  item.addEventListener("click", function() {
-    let currentBtn = item;
-    let tabId = currentBtn.getAttribute('data-tab')
-    let currentTab = document.querySelector(tabId);
+// function onTabClick(item) {
+//   item.addEventListener("click", function() {
+//     let currentBtn = item;
+//     let tabId = currentBtn.getAttribute('data-tab')
+//     let currentTab = document.querySelector(tabId);
   
-    if(!currentBtn.classList.contains('active')) {
-      tabsBtn.forEach(function(item) {
-        item.classList.remove('active')
-      });
+//     if(!currentBtn.classList.contains('active')) {
+//       tabsBtn.forEach(function(item) {
+//         item.classList.remove('active')
+//       });
   
-      tabsItems.forEach(function(item) {
-        item.classList.remove('active')
-      });
+//       tabsItems.forEach(function(item) {
+//         item.classList.remove('active')
+//       });
   
-  
-      currentBtn.classList.add("active");
-      currentTab.classList.add("active");
-    }
-  })
-};
+//       currentBtn.classList.add("active");
+//       currentTab.classList.add("active");
+//     }
 
+
+//   })
+// };
+
+
+// createTable();
+
+
+let navButton = document.querySelector('.nav-link');
+
+navButton.addEventListener('click', () => {
+  let table = document.querySelector('.table');
+  let phone = document.createElement('div');
+  
+  if (!table.querySelector('.card')) {
+    phone.innerHTML = `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div></div>`;
+  
+    table.appendChild(phone);
+  }
+
+});
