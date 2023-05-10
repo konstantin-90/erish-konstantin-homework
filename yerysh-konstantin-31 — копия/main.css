@@ -1,59 +1,127 @@
-.tabs__nav {
-    display: flex;
-    flex-direction: column;
-    margin: 1%;
-    width: 5%;
+.shop {
+  display: flex;
 }
 
-
-.tabs__nav-btn-1,
-.tabs__nav-btn-2,
-.tabs__nav-btn-3 {
-    background-color: rgb(255, 0, 0);
-    width: 250px;
-    height: 50px;
-    font-size: 32px;
-    border-radius: 20px;
+.categories-box {
+  display: flex;
+  flex-direction: column;
 }
 
-/* .tabs__item {
-    display: none;
-} */
-
-.tabs__nav-btn.active {
-    background-color: blue;
+.categories {
+  list-style: none;
 }
 
-/* .tabs__item.active {
-    display: block;
-} */
-
-.container {
-    display: flex;
-    flex-direction: row;
+.category {
+  padding: 10px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  transition: 0.3s;
+  background-color: rgb(186, 225, 240);
 }
 
-.tabs__content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 5%;
+.category:hover {
+  background-color: #c6c9ef;
 }
 
-.main {
-    display: flex;
+.products {
+  padding: 70px 0;
 }
 
-.nav {
-    width: 20%;
-    background-color: aqua;
+.list-item {
+  list-style: none;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: max-content;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: 0.5s all;
+  background-color: #e4a70b;
 }
 
-.table {
-    width: 40%;
-    background-color: brown;
+.list-item:hover {
+  background-color: #c6c9ef;
 }
 
-.card {
-    display: block;
+.product-info-box {
+  height: max-content;
+  margin: 0 50px;
+}
+
+.product-price,
+.product-description {
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-weight: bold;
+}
+
+.img-product {
+  max-width: 239px;
+  max-height: 200px;
+}
+
+.buy-button {
+  padding: 5px;
+  max-width: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+  background-color: rgb(108, 223, 122);
+  border-radius: 10px;
+}
+
+.message {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 40px;
+  z-index: 3;
+  border-radius: 7px;
+}
+
+.pop-up-bg {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.btn-pop-up {
+  font-size: 18px;
+  background: rgb(115, 115, 115);
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
