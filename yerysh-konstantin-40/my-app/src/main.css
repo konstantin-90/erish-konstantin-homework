@@ -1,0 +1,43 @@
+.App {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  background-color: aqua;
+  font-size: 32px;
+}
+
+.aside {
+  background-color: #eee;
+  width: 200px;
+  height: 500px;
+  background-color: black;
+  color: white;
+}
+
+.link__list {
+  padding-top: 10%;
+}
+
+.link {
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main__title {
+  text-align: center;
+  font-size: 20px;
+}
