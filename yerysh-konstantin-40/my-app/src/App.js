@@ -15,9 +15,9 @@ function Sidebar() {
     <aside className="aside">
       <nav>
         <ul className="link__list">
-          <li><a href="/" className="link">ссылка 1</a></li>
-          <li><a href="/" className="link">ссылка 2</a></li>
-          <li><a href="/" className="link">ссылка 3</a></li>
+          <li><a href="/" className="link">сылка 1</a></li>
+          <li><a href="/" className="link">сылка 2</a></li>
+          <li><a href="/" className="link">сылка 3</a></li>
         </ul>
       </nav>
     </aside>
