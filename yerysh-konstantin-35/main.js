@@ -1,4 +1,22 @@
-function saveData() {
+const form = document.getElementById('registration__form');
+const table = document.getElementById('data');
+const button = document.querySelector('btn-primary');
+
+function isValidDate(dateString) {
+  const regex = /^\d{4}$/;
+  if (!regex.test(dateString)) {
+    return false;
+  }
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) {
+    return false;
+  }
+  return true;
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
   const firstName = document.getElementById("first__name").value;
   const lastName = document.getElementById("last__name").value;
   const birthdate = document.getElementById("birthdate").value;
@@ -6,29 +24,39 @@ function saveData() {
   const city = document.getElementById("city").value;
   const address = document.getElementById("address").value;
   const languages = document.querySelectorAll('input[name="languages"]:checked');
-  
+
   const selectedLanguages = [];
   languages.forEach((checkbox) => {
     selectedLanguages.push(checkbox.value);
   });
-  
-  let table = document.getElementById("data").getElementsByTagName("tbody")[0];
-  let row = table.insertRow();
-  
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  let cell3 = row.insertCell(2);
-  let cell4 = row.insertCell(3);
-  let cell5 = row.insertCell(4);
-  let cell6 = row.insertCell(5);
-  let cell7 = row.insertCell(6);
-  cell1.innerHTML = firstName;
-  cell2.innerHTML = lastName;
-  cell3.innerHTML = birthdate;
-  cell4.innerHTML = gender;
-  cell5.innerHTML = city;
-  cell6.innerHTML = address;
-  cell7.innerHTML = selectedLanguages;
-}
 
+  const errors = [];
+  if (!firstName) {
+    errors.push('Не указано имя');
+  }
+  if (!lastName) {
+    errors.push('Не указана фамилия');
+  }
+  if (!isValidDate(birthdate)) {
+    errors.push('Некорректная дата рождения');
+  }
+  if (!city) {
+    errors.push('Не указан город');
+  }
+  if (errors.length > 0) {
+    alert(errors.join('\n'));
+    return;
+  }
 
+  const row = table.insertRow();
+
+  row.insertCell().textContent = firstName;
+  row.insertCell().textContent = lastName;
+  row.insertCell().textContent = birthdate;
+  row.insertCell().textContent = gender;
+  row.insertCell().textContent = city;
+  row.insertCell().textContent = address;
+  row.insertCell().textContent = selectedLanguages;
+
+  form.reset();
+})
